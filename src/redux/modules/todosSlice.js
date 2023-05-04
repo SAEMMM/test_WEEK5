@@ -8,7 +8,7 @@ export const __addToDo = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       await waitTwoSeconds()
-      const response = await axios.post('http://localhost:4000/todos', payload)
+      const response = await axios.post('https://week5-test-api.onrender.com/todos', payload)
       return response.data
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message)
@@ -21,7 +21,7 @@ export const __deleteTodo = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       await waitTwoSeconds()
-      await axios.delete(`http://localhost:4000/todos/${payload}`)
+      await axios.delete(`https://week5-test-api.onrender.com/todos/${payload}`)
       return payload
     } catch(error) {
       return thunkAPI.rejectWithValue(error.message)

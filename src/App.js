@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     const fetchTodos = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/todos');
+        const response = await axios.get('https://week5-test-api.onrender.com/todos');
         dispatch({ type: 'todos/setTodos', payload: response.data });
       } catch (error) {
         console.error(error);
